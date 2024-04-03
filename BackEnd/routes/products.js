@@ -1,27 +1,26 @@
-const express = require('express')
+const express = require('express');
+const router = express.Router();
+const {
+    createProduct,
+    getAllProducts,
+    updateProduct,
+    deleteProduct,
+    getProductById
+} = require('../controllers/ProductController');
 
-const router = express.Router()
+// GET all products (READ)
+router.get('/', getAllProducts);
 
-//  get all products
-router.get('/', (req, res) => {
-    res.json({msg: 'GET all products'})
-})
+// GET a specific product by ID (READ)
+router.get('/:id', getProductById);
 
-router.get('/:id', (req, res) => {
-    res.json({msg: 'get single product'})
-})
+// POST a product (CREATE)
+router.post('/', createProduct);
 
-router.post('/', (req,res) => {
-    res.json({msg: 'post a product'})
-})
+// DELETE a product (DELETE)
+router.delete('/:id', deleteProduct);
 
-router.delete('/:id', (req,res) => {
-    res.json({msg: 'Delete a product'})
-})
+// UPDATE a product (UPDATE)
+router.patch('/:id', updateProduct);
 
-router.patch('/:id', (req,res) => {
-    res.json({msg: 'Update a product'})
-})
-
-
-module.exports = router
+module.exports = router;
