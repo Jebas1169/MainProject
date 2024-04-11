@@ -4,8 +4,9 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const productRoutes = require('./routes/products')
+const sellerRoutes = require('./routes/seller')
 
-// express app
+// Express app
 const app = express()
 
 // Middleware
@@ -22,6 +23,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/api/products', productRoutes)
+app.use('/api/sellers', sellerRoutes)
 
 // Error handling middleware
 app.use((err, req, res, next) => {
