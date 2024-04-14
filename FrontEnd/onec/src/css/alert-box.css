@@ -1,0 +1,30 @@
+.alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .alert-box p {
+    margin: 0;
+  }
+  
+  .ok-button {
+    margin-top: 10px;
+    align-self: flex-end; /* Align button to the right */
+  }
+  
+  .error {
+    background-color: #ffcccc; /* Red background for error messages */
+  }
+  
+  .success {
+    background-color: #ccffcc; /* Green background for success messages */
+  }
+  

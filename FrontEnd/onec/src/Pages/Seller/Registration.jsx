@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../../css/seller/registration.css' ;
  
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -38,7 +39,7 @@ const Registration = () => {
     }
     setErrors({});
     try {
-      const response = await axios.post('/api/sellers/register', formData);
+      const response = await axios.post('http://localhost:4000/api/sellers/register', formData);
       console.log(response.data);
       // Redirect or show success message after successful registration
     } catch (error) {
@@ -114,7 +115,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.organizationName && <span>{errors.organizationName}</span>}
+          {errors.organizationName && <span className='error-message'>{errors.organizationName}</span>}
         </label>
 
         {/* Seller Name */}
@@ -127,7 +128,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.sellerName && <span>{errors.sellerName}</span>}
+          {errors.sellerName && <span className='error-message'>{errors.sellerName}</span>}
         </label>
 
         {/* PAN Number */}
@@ -140,7 +141,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.panNumber && <span>{errors.panNumber}</span>}
+          {errors.panNumber && <span className='error-message'>{errors.panNumber}</span>}
         </label>
 
         {/* GST Number */}
@@ -153,7 +154,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.gstNumber && <span>{errors.gstNumber}</span>}
+          {errors.gstNumber && <span className='error-message'>{errors.gstNumber}</span>}
         </label>
 
         {/* Mobile Number */}
@@ -166,7 +167,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.mobileNumber && <span>{errors.mobileNumber}</span>}
+          {errors.mobileNumber && <span className='error-message'>{errors.mobileNumber}</span>}
         </label>
 
         {/* Email */}
@@ -179,7 +180,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.email && <span>{errors.email}</span>}
+          {errors.email && <span className='error-message'>{errors.email}</span>}
         </label>
 
         {/* Organization Address */}
@@ -191,7 +192,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.organizationAddress && <span>{errors.organizationAddress}</span>}
+          {errors.organizationAddress && <span className='error-message'>{errors.organizationAddress}</span>}
         </label>
 
         {/* Organization Description */}
@@ -203,7 +204,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.organizationDescription && <span>{errors.organizationDescription}</span>}
+          {errors.organizationDescription && <span className='error-message'>{errors.organizationDescription}</span>}
         </label>
 
         {/* Bank Details */}
@@ -216,7 +217,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.accountNumber && <span>{errors.accountNumber}</span>}
+          {errors.accountNumber && <span className='error-message'>{errors.accountNumber}</span>}
         </label>
         <label>
           IFSC Code:
@@ -227,7 +228,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.ifscCode && <span>{errors.ifscCode}</span>}
+          {errors.ifscCode && <span className='error-message'>{errors.ifscCode}</span>}
         </label>
         <label>
           Bank Name:
@@ -238,7 +239,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.bankName && <span>{errors.bankName}</span>}
+          {errors.bankName && <span className='error-message'>{errors.bankName}</span>}
         </label>
 
         {/* Password */}
@@ -251,7 +252,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.password && <span>{errors.password}</span>}
+          {errors.password && <span className='error-message'>{errors.password}</span>}
         </label>
 
         {/* Confirm Password */}
@@ -264,7 +265,7 @@ const Registration = () => {
             onChange={handleChange}
             required
           />
-          {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
+          {errors.confirmPassword && <span className='error-message'>{errors.confirmPassword}</span>}
         </label>
 
         {/* Checkbox for terms and conditions */}
@@ -278,7 +279,7 @@ const Registration = () => {
           />
           I agree to the terms and conditions
         </label>
-        {errors.agreedToTerms && <span>{errors.agreedToTerms}</span>}
+        {errors.agreedToTerms && <span className='error-message'>{errors.agreedToTerms}</span>}
 
         {/* Submit button */}
         <button type="submit">Register</button>

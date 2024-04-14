@@ -1,0 +1,54 @@
+.admin-panel {
+    padding: 20px;
+  }
+  
+  .seller-cards {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .seller-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .button-group {
+    margin-top: 10px;
+  }
+  
+  .button-group button {
+    margin-right: 10px;
+  }
+  
+  .alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .alert-box p {
+    margin: 0;
+  }
+  
+  .alert-box button {
+    float: right;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .seller-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  
+    .seller-card {
+      width: 100%;
+    }
+  }
+  
