@@ -27,7 +27,10 @@ const Login = () => {
       const response = await axios.post('http://localhost:4000/api/sellers/login', formData);
       console.log(response.data);
       // Handle successful login (redirect, etc.)
+      console.log("response")
       console.log(response);
+      // Store session data in session storage
+      sessionStorage.setItem('sellerData', JSON.stringify(response.data));
       setAlertMessage('Login successful');
       setShowAlert(true); // <-- Show alert for successful login too
       setTimeout(() => {
@@ -86,5 +89,5 @@ const Login = () => {
     </div>
   );
 };
-
+3
 export default Login;

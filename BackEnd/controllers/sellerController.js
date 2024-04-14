@@ -80,8 +80,12 @@ const loginSeller = async (req, res) => {
       return res.status(400).json({ error: 'Seller account not approved yet' });
     }
 
+    const sellerData = { existingSeller };
     // Send success response
-    res.status(200).json({ message: 'Seller logged in successfully' });
+    // res.status(200).json({ message: 'Seller logged in successfully' });
+    res.status(200).json(sellerData);
+    // // Store seller data in the session
+    // req.session.seller = sellerData;
   } catch (error) {
     // Handle error
     console.error('Error logging in seller:', error);

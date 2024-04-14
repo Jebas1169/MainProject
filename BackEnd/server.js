@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+// const session = require('express-session');
 const productRoutes = require('./routes/products')
 const sellerRoutes = require('./routes/seller')
 
@@ -30,6 +31,14 @@ app.use((err, req, res, next) => {
     console.error(err.stack)
     res.status(500).send('Something broke!')
 })
+
+// // Configure session middleware
+// app.use(session({
+//     secret: 'your_secret_key',
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: { secure: false } // Adjust cookie settings as needed
+// }));
 
 // Connect to the database
 mongoose.connect(process.env.MONGO_URL)
